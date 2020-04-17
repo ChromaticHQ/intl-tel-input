@@ -1061,7 +1061,6 @@ class Iti {
 
   // close the dropdown and unbind any listeners
   _closeDropdown() {
-    this.selectedFlag.setAttribute('aria-expanded', false);
     this.countryList.classList.add('iti__hide');
     this.selectedFlag.setAttribute('aria-expanded', 'false');
     // update the arrow
