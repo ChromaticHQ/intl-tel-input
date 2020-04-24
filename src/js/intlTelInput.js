@@ -335,6 +335,7 @@ class Iti {
     this.selectedFlag = this._createEl('div', {
       class: 'iti__selected-flag',
       role: 'combobox',
+      'aria-haspopup': 'listbox',
       'aria-owns': 'country-listbox',
       'aria-expanded': 'false',
     }, this.flagsContainer);
@@ -509,6 +510,7 @@ class Iti {
       // else let it bubble up to the top ("click-off-to-close" listener)
       // we cannot just stopPropagation as it may be needed to close another instance
       if (this.countryList.classList.contains('iti__hide') && !this.telInput.disabled && !this.telInput.readOnly) {
+        this.selectedFlag.setAttribute('aria-expanded', true);
         this._showDropdown();
       }
     };
